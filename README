@@ -4,3 +4,7 @@
 
 	1. clone this repository
 	2. symlink dotfiles
+
+## Dependencies
+
+	- oh-my-zsh

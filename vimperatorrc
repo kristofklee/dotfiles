@@ -1,0 +1,4 @@
+map <S-j> :tabNext<CR>
+map <S-k> :tabnext<CR>
+
+set hc=asdfjklö

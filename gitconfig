@@ -1,0 +1,12 @@
+[user]
+	name = Kristof Klee
+	email = kristofklee@gmail.com
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	interactive = auto
+[core]
+	editor = mvim -f --nomru
+	excludesfile = /Volumes/Users/n00bian/.gitignore
+	quotepath = false

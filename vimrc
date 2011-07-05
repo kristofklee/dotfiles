@@ -34,6 +34,8 @@ set switchbuf=usetab
 set guioptions=aAce
 set incsearch
 
+set directory=~/.vim/tmp/
+
 if has("mouse")
 	set mouse=a
 endif

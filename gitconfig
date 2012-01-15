@@ -8,5 +8,7 @@
 	interactive = auto
 [core]
 	editor = mvim -f --nomru
-	excludesfile = /Volumes/Users/n00bian/.gitignore
+	excludesfile = ~/.gitignore
 	quotepath = false
+[branch]
+	autosetuprebase = always

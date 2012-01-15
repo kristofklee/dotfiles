@@ -52,6 +52,7 @@ hi def link TextJump Comment
 
 " vimwiki
 let wiki = {}
+let wiki.syntax = 'markdown'
 let wiki.path = '~/Dropbox/vimwiki/'
 let wiki.path_html = '~/Dropbox/Public/vimwiki/'
 let wiki.diary_rel_path = ''
@@ -89,12 +90,6 @@ function StofflVimwikiToRedmine()
 	%s/^\n\+/\r/e  
 endfunction
 command VimwikiToRedmine :call StofflVimwikiToRedmine()
-function StofflVimwikiToTrac()
-	%s/|/||/ge
-
-	%s/{{{.*$/{{{/e
-endfunction
-command VimwikiToTrac :call StofflVimwikiToTrac()
 
 " handle URI
 function! HandleURI()

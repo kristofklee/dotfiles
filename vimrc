@@ -9,16 +9,17 @@ filetype plugin indent on
 set bs=2
 set wrapmargin=8
 set ruler
-if has('gui_running')
-	set background=light
-else
-	set background=dark
-endif
+"if has('gui_running')
+	"set background=light
+"else
+	"set background=dark
+"endif
+set background=light
 "colorscheme manuscript
 "colorscheme vividchalk
 "colorscheme molokai
 "let g:molokai_original=0
-let g:solarized_termcolors=16
+let g:solarized_termcolors=256
 colorscheme solarized
 syntax on
 set nobackup

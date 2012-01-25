@@ -44,10 +44,15 @@ export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 export PATH=$HOME/bin:$PATH
 
 # Editor
-export EDITOR='mvim -f --nomru -c "au VimLeave * !open -a iTerm"'
+export EDITOR='mvim -f'
 
 # RVM
 unsetopt auto_name_dirs
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
-export TERM=rxvt-256color
+#export TERM=rxvt-256color
+
+# vim settings
+alias tmux="TERM=screen-256color-bce tmux"
+
+

@@ -19,8 +19,8 @@ set background=dark
 "colorscheme vividchalk
 "colorscheme molokai
 "let g:molokai_original=0
-let g:solarized_termcolors=256
-colorscheme solarized
+"let g:solarized_termcolors=256
+"colorscheme solarized
 colorscheme tomorrow-night
 syntax on
 set nobackup

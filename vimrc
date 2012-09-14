@@ -14,13 +14,14 @@ set ruler
 "else
 	"set background=dark
 "endif
-set background=light
+set background=dark
 "colorscheme manuscript
 "colorscheme vividchalk
 "colorscheme molokai
 "let g:molokai_original=0
 let g:solarized_termcolors=256
 colorscheme solarized
+colorscheme tomorrow-night
 syntax on
 set nobackup
 set nu
@@ -164,3 +165,11 @@ vmap <C-Down> ]egv
 " Visually select the text that was last edited/pasted
 nmap gV `[v`]
 
+
+" ctrlp
+
+nmap <Leader>t :CtrlP<CR>
+
+" minitest
+
+set completefunc=syntaxcomplete#Complete

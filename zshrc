@@ -25,7 +25,7 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 
 # Oracle Instant Client Config
-export ORACLE_HOME=/opt/oracle/instantclient_10_2_64
+export ORACLE_HOME=/opt/oracle/instantclient_10_2
 export TNS_ADMIN=$ORACLE_HOME
 export SQLPATH=$ORACLE_HOME
 export DYLD_LIBRARY_PATH=$ORACLE_HOME:$DYLD_LIBRARY_PATH
@@ -51,8 +51,17 @@ unsetopt auto_name_dirs
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 #export TERM=rxvt-256color
+export TERM=screen-256color
 
 # vim settings
-alias tmux="TERM=screen-256color-bce tmux"
+alias tmux="TERM=screen-256color tmux"
+alias mc="TERM=xterm-256color mc"
+#alias tmux="TERM=xterm-256color tmux"
+
+# node js
+export NODE_PATH=/usr/local/lib/node_modules
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 
+alias sshtisstest="ssh r01 'ssh rtest01-i'"

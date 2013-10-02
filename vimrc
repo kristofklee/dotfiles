@@ -72,6 +72,8 @@ let g:vimwiki_folding=0
 
 command! Wiki :VimwikiTabGoHome
 
+
+
 function StofflVimwikiToRedmine()
 	%s/===== \(.*\) =====/h5. \1\r/e
 	%s/==== \(.*\) ====/h4. \1\r/e
@@ -92,6 +94,28 @@ function StofflVimwikiToRedmine()
 	%s/^\n\+/\r/e  
 endfunction
 command VimwikiToRedmine :call StofflVimwikiToRedmine()
+
+function StofflMarkdownToRedmine()
+	%s/^#####\(.*\)/h5.\1\r/e
+	%s/^####\(.*\)/h4.\1\r/e
+	%s/^###\(.*\)/h3.\1\r/e
+	%s/^##\(.*\)/h2.\1\r/e
+	%s/^#\(.*\)/h1.\1\r/e
+
+	%s/^\t\*/\*/e
+	%s/^\t\t\*/\*\*/e
+
+	%s/%toc/{{>toc}}/e
+
+	%s/{{{class="brush:\s*\(.*\)\s*"/<pre><code class="\1">/e
+	%s/{{{$/<pre><code>/e
+	%s/{{{\(.*\)/<pre><code class="\1">/e
+	%s/}}}/<\/code><\/pre>/e
+
+	%s/^\n\+/\r/e  
+endfunction
+command MarkdownToRedmine :call StofflMarkdownToRedmine()
+
 
 " handle URI
 function! HandleURI()
@@ -173,3 +197,16 @@ nmap <Leader>t :CtrlP<CR>
 " minitest
 
 set completefunc=syntaxcomplete#Complete
+
+set nocompatible   " Disable vi-compatibility
+set laststatus=2   " Always show the statusline
+set encoding=utf-8 " Necessary to show Unicode glyphs
+
+set t_Co=256 " Explicitly tell Vim that the terminal supports 256 colors
+
+
+command Tidy  :%!tidy -q -i -xml
+command TidyHtml  :%!tidy -q -i -html
+
+" marked app integration
+nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>

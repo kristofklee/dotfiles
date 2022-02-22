@@ -8,8 +8,9 @@
 	interactive = auto
 [core]
 	editor = vim -f
-	excludesfile = ~/.gitignore
+	excludesfile = /Users/kk/.gitignore
 	quotepath = false
+	autocrlf = input
 [branch]
 	autosetuprebase = always
 [difftool "sourcetree"]
@@ -31,3 +32,12 @@
 	prompt = false
 [merge]
 	tool = Kaleidoscope
+[push]
+	default = simple
+[commit]
+	template = /Users/kk/.stCommitMsg
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

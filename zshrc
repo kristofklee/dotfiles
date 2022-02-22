@@ -25,12 +25,12 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 
 # Oracle Instant Client Config
-export ORACLE_HOME=/opt/oracle/instantclient_10_2
+export ORACLE_HOME=$HOME/Applications/instantclient_11_2
 export TNS_ADMIN=$ORACLE_HOME
 export SQLPATH=$ORACLE_HOME
-export DYLD_LIBRARY_PATH=$ORACLE_HOME:$DYLD_LIBRARY_PATH
-export LD_LIBRARY_PATH=$ORACLE_HOME:$LD_LIBRARY_PATH
-export PATH=$PATH:$ORACLE_HOME
+#export DYLD_LIBRARY_PATH=$ORACLE_HOME:$DYLD_LIBRARY_PATH
+#export LD_LIBRARY_PATH=$ORACLE_HOME:$LD_LIBRARY_PATH
+#export PATH=$PATH:$ORACLE_HOME
 
 # Java & Mavens
 #export JAVA_HOME=/Library/Java/Home
@@ -43,12 +43,15 @@ export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 # My bin
 export PATH=$HOME/bin:$PATH
 
+# Vagrant
+export PATH=/opt/vagrant/bin:$PATH
+
 # Editor
 export EDITOR='mvim -f'
 
 # RVM
 unsetopt auto_name_dirs
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+#[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 #export TERM=rxvt-256color
 export TERM=screen-256color
@@ -58,18 +61,27 @@ alias tmux="TERM=screen-256color tmux"
 alias mc="TERM=xterm-256color mc"
 #alias tmux="TERM=xterm-256color tmux"
 
-# node js
-export NODE_PATH=/usr/local/lib/node_modules
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
+#PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 alias sshtisstest="ssh r01 'ssh rtest01-i'"
 alias redmine="ruby script/redmine"
 
+# haskell & cabal
+export PATH=$PATH:$HOME/.cabal/bin
 
-# tiss ssh aliases
-alias tissdev1="ssh -A r01 -t ssh -A dev2-i -t su - rails"
-alias tisstest="ssh -A r01 -t ssh -A rtest01-i -t su - rails"
-alias tissmigdev="ssh -A r01 -t ssh -A rmig01-i -t su - rails"
-alias tissmigprod="ssh -A r01 -t ssh -A rmig02-i -t su - rails"
+# node
+#export NODE_PATH=/usr/local/lib/node_modules
+export PATH="/usr/local/opt/node@6/bin:$PATH"
+
+#export DBEG_SALES_DATABASENAME=sales_kklee
+
+export JAVA_8_HOME=$(/usr/libexec/java_home -v1.8)
+export JAVA_12_HOME=$(/usr/libexec/java_home -v12)
+export JAVA_13_HOME=$(/usr/libexec/java_home -v13)
+
+alias java8='export JAVA_HOME=$JAVA_8_HOME'
+alias java12='export JAVA_HOME=$JAVA_12_HOME'
+alias java13='export JAVA_HOME=$JAVA_13_HOME'
+
+java8
+
